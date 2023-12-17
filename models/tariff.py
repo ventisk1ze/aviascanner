@@ -5,9 +5,7 @@ from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
 from sqlalchemy import String
-
-class Base(DeclarativeBase):
-    pass
+from .base import Base
 
 
 class Tariff(Base):

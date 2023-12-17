@@ -6,9 +6,7 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy import DateTime
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-
-class Base(DeclarativeBase):
-    pass
+from .base import Base
 
 
 class Reservation(Base):
