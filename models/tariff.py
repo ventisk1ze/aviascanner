@@ -1,6 +1,6 @@
 from typing import List
 
-from sqlalchemy.orm import DeclarativeBase
+
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
@@ -16,4 +16,4 @@ class Tariff(Base):
     name: Mapped[str] = mapped_column(String(20))
     usd_price: Mapped[float]
 
-    reservations: Mapped[List['Reservation']] = relationship(back_populates='tariff')
+    flights: Mapped[List['Flight']] = relationship(back_populates='tariff')

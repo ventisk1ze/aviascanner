@@ -1,6 +1,6 @@
 from typing import List
 
-from sqlalchemy.orm import DeclarativeBase
+
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
@@ -20,5 +20,5 @@ class Airport(Base):
     country_id: Mapped[int] = mapped_column(ForeignKey('country.id'))
     country: Mapped['Country'] = relationship(back_populates='airports')
 
-    departure_reservations: Mapped[List["Reservation"]] = relationship(back_populates='departure_airport')
-    arrival_reservations: Mapped[List["Reservation"]] = relationship(back_populates='arrival_airport')
+    departure_reservations: Mapped[List["Flight"]] = relationship(back_populates='departure_airport')
+    arrival_reservations: Mapped[List["Flight"]] = relationship(back_populates='arrival_airport')

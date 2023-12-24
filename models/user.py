@@ -1,6 +1,5 @@
 from typing import Optional, List
 
-from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
@@ -19,4 +18,4 @@ class User(Base):
     role: Mapped[str] = mapped_column(String(20))
     password: Mapped[str] = mapped_column(String(300))
 
-    reservations: Mapped[List['Reservation']] = relationship(back_populates='user')
+    resrvations: Mapped[List['Reservation']] = relationship(back_populates='user')

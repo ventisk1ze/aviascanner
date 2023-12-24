@@ -1,6 +1,6 @@
 from typing import List
 
-from sqlalchemy.orm import DeclarativeBase
+
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
@@ -18,4 +18,4 @@ class AircraftType(Base):
     cruisingSpeed: Mapped[float]
     capacity: Mapped[int]
 
-    reservations: Mapped[List['Reservation']] = relationship(back_populates='aircraft_type')
+    flights: Mapped[List['Flight']] = relationship(back_populates='aircraft_type')
